@@ -22,6 +22,7 @@
 <link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
 <link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
 <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
+<link rel="stylesheet" href="/css/style.css">
 <meta name="theme-color" content="#712cf9">
 
 
@@ -103,6 +104,9 @@
                 <option value="Dior">
             </datalist>
         </div>
+        <div class="ml-1">
+          <button type="button" id="search" class="btn btn-outline-dark" style="width: 50; height: 70; font-size:11px;" onclick="move()">Search</button>
+      </div>
         <ul class="navbar-nav ml-auto mb-2 mb-sm-0">
             <button type="button" class="btn btn-dark">Sign Up</button>
         </ul>
@@ -116,12 +120,24 @@
             </svg>
             </a>
         </div>
-        <div class="mx-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-              </svg>
-        </div>
+        <button id="modal-btn" class="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+          <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+          </svg>
+        </button>
+      
+        <div id="my-modal" class="modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2>Username</h2>
+              <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+              <p>Email</p>
+              <p>Phone</p>
+            </div>
+          </div>
         </div>
     </nav>
 
@@ -134,27 +150,30 @@
 
         <div class="collapse navbar-collapse" id="navbarDropdown">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a href="#" class="nav-link" aria-current="page">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link" aria-current="page">Lipstick</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link" aria-current="page">Eye Liner</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link" aria-current="page">Mascara</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link" aria-current="page">Eyebrow Pencil</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link" aria-current="page">Powder Puff</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link" aria-current="page">Foundation</a>
-                </li>
+              <li class="nav-item">
+                <a href="index.html" class="nav-link" aria-current="page">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="lipstick.html" class="nav-link" aria-current="page">Lipstick</a>
+            </li>
+            <li class="nav-item">
+                <a href="eyeliner.html" class="nav-link" aria-current="page">Eye Liner</a>
+            </li>
+            <li class="nav-item">
+                <a href="mascara.html" class="nav-link" aria-current="page">Mascara</a>
+            </li>
+            <li class="nav-item">
+                <a href="eyebrow_pencil.html" class="nav-link" aria-current="page">Eyebrow Pencil</a>
+            </li>
+            <li class="nav-item">
+                <a href="powderpuff.html" class="nav-link" aria-current="page">Powder Puff</a>
+            </li>
+            <li class="nav-item">
+                <a href="foundation.html" class="nav-link" aria-current="page">Foundation</a>
+            </li>
+            <li class="nav-item">
+              <a href="promotion.html" class="nav-link" aria-current="page">Promotion</a>
+            </li>
             </ul>
         </div>
         </div>
@@ -329,5 +348,6 @@
     <script src="/docs/5.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <script src="form-validation.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/function.js"></script>
   </body>
 </html>

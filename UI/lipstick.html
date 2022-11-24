@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lipstick</title>
 
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
 </head>
 <body>
@@ -14,13 +15,13 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
                 <a href="index.html">
-                    <img src="/img_project/luxury.png" width="130" height="40" alt="">
+                <img src="/img_project/luxury.png" width="130" height="40" alt="">
                 </a>
             <button class="navbar-toggler" type="button" data-toggler="collapse" data-target="#navbarDropdown">
                 <span class="navbar=toggler-icon"></span>
             </button>
             <div class="mb-2 mt-2 ml-auto">
-                <input type="search" class="form-control form-control-sm" list="dataListOptions" placeholder="Search Brand">
+                <input type="search" class="form-control form-control-sm" list="dataListOptions" placeholder="Search Brand" id="inputValue">
                 <datalist id="dataListOptions">
                     <option value="Gucci">
                     <option value="YSL">
@@ -28,6 +29,9 @@
                     <option value="Hermes">
                     <option value="Dior">
                 </datalist>
+            </div>
+            <div class="ml-1">
+                <button type="button" id="search" class="btn btn-outline-dark" style="width: 50; height: 70; font-size:11px;" onclick="move()">Search</button>
             </div>
             <ul class="navbar-nav ml-auto mb-2 mb-sm-0">
                 <a href="sign_up.html">
@@ -39,20 +43,34 @@
                     <button type="button" class="btn btn-outline-dark">Sign In</button>
                 </a>
             </div>
+            
             <div class="mx-2">
                 <a href="payment.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-minecart" viewBox="0 0 16 16">
-                        <path d="M4 15a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm0 1a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm8-1a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm0 1a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM.115 3.18A.5.5 0 0 1 .5 3h15a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 14 12H2a.5.5 0 0 1-.491-.408l-1.5-8a.5.5 0 0 1 .106-.411zm.987.82 1.313 7h11.17l1.313-7H1.102z"/>
-                    </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-minecart" viewBox="0 0 16 16">
+                    <path d="M4 15a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm0 1a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm8-1a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm0 1a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM.115 3.18A.5.5 0 0 1 .5 3h15a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 14 12H2a.5.5 0 0 1-.491-.408l-1.5-8a.5.5 0 0 1 .106-.411zm.987.82 1.313 7h11.17l1.313-7H1.102z"/>
+                </svg>
                 </a>
             </div>
-            <div class="mx-2">
+
+            <button id="modal-btn" class="button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-                  </svg>
-            </div>
-            </div>
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                </svg>
+              </button>
+            
+              <div id="my-modal" class="modal">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h2>Username</h2>
+                    <span class="close">&times;</span>
+                  </div>
+                  <div class="modal-body">
+                    <p>Email</p>
+                    <p>Phone</p>
+                  </div>
+                </div>
+              </div>
         </nav>
 
     <!-- Navbar2 -->
@@ -85,6 +103,9 @@
                 <li class="nav-item">
                     <a href="foundation.html" class="nav-link" aria-current="page">Foundation</a>
                 </li>
+                <li class="nav-item">
+                    <a href="promotion.html" class="nav-link" aria-current="page">Promotion</a>
+                </li>
             </ul>
         </div>
         </div>
@@ -104,7 +125,7 @@
                     <h5 class="card-title ml-2 mt-2">$ 1900</h5>
                     <h6 class="card-title ml-2">CHANEL</h6>
                     <p class="card-text ml-2">ROUGE ALLURE L'EXTRAIT</p>
-                    <a href="#" class="btn btn-dark mt-4">Add Cart</a>
+                    <button class="btn btn-dark mt-4" onclick="addcart()">Add Cart</button>
                 </div>
             </div>
         </div>
@@ -115,7 +136,7 @@
                     <h5 class="card-title ml-2 mt-2">$ 1890</h5>
                     <h6 class="card-title ml-2">GUCCI</h6>
                     <p class="card-text ml-2">GUCCI ROUGE DE BEAUTE BRILLANT LIPSTICK</p>
-                    <a href="#" class="btn btn-dark">Add Cart</a>
+                    <button class="btn btn-dark" onclick="addcart()">Add Cart</button>
                 </div>
             </div>
         </div>
@@ -126,7 +147,7 @@
                         <h5 class="card-title ml-2 mt-2">$ 1790</h5>
                         <h6 class="card-title ml-2 ">HERMES</h6>
                         <p class="card-text ml-2">Rouge Hermes, Matte metallic lipstick, Limited edition, Rouge Grenat</p>
-                        <a href="#" class="btn btn-dark">Add Cart</a>
+                        <button class="btn btn-dark" onclick="addcart()">Add Cart</button>
                     </div>
                 </div>
             </div>
@@ -137,7 +158,7 @@
                     <h5 class="card-title ml-2 mt-2">$ 2190</h5>
                     <h6 class="card-title ml-2">YSL</h6>
                     <p class="card-text ml-2">TATOUAGE COUTURE VELVET CREAM</p>
-                    <a href="#" class="btn btn-dark mt-4">Add Cart</a>
+                    <button class="btn btn-dark mt-4" onclick="addcart()">Add Cart</button>
                 </div>
             </div>
         </div>
@@ -152,7 +173,7 @@
                     <h5 class="card-title ml-2 mt-2">$ 1890</h5>
                     <h6 class="card-title ml-2">DIOR</h6>
                     <p class="card-text ml-2">ROUGE DIOR - LIMITED EDITION</p>
-                    <a href="#" class="btn btn-dark mt-4">Add Cart</a>
+                    <button class="btn btn-dark mt-4" onclick="addcart()">Add Cart</button>
                 </div>
             </div>
         </div>
@@ -160,6 +181,7 @@
 
     </div>
 
+    <script src="/js/function.js"></script>
     <script src="/js/bootstrap.min.js"></script>
 </body>
 </html>

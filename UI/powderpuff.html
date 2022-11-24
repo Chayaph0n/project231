@@ -7,6 +7,7 @@
     <title>Powder Puff</title>
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     
@@ -29,6 +30,9 @@
                     <option value="Dior">
                 </datalist>
             </div>
+            <div class="ml-1">
+                <button type="button" id="search" class="btn btn-outline-dark" style="width: 50; height: 70; font-size:11px;" onclick="move()">Search</button>
+            </div>
             <ul class="navbar-nav ml-auto mb-2 mb-sm-0">
                 <a href="sign_up.html">
                     <button type="button" class="btn btn-dark">Sign Up</button>
@@ -46,13 +50,25 @@
                     </svg>
                 </a>
             </div>
-            <div class="mx-2">
+            <button id="modal-btn" class="button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-                  </svg>
-            </div>
-            </div>
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                </svg>
+              </button>
+            
+              <div id="my-modal" class="modal">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h2>Username</h2>
+                    <span class="close">&times;</span>
+                  </div>
+                  <div class="modal-body">
+                    <p>Email</p>
+                    <p>Phone</p>
+                  </div>
+                </div>
+              </div>
         </nav>
 
     <!-- Navbar2 -->
@@ -85,6 +101,9 @@
                 <li class="nav-item">
                     <a href="foundation.html" class="nav-link" aria-current="page">Foundation</a>
                 </li>
+                <li class="nav-item">
+                    <a href="promotion.html" class="nav-link" aria-current="page">Promotion</a>
+                </li>
             </ul>
         </div>
         </div>
@@ -104,7 +123,7 @@
                     <h5 class="card-title ml-2 mt-2">$ 300</h5>
                     <h6 class="card-title ml-2">DIOR</h6>
                     <p class="card-text ml-2">DIOR Forever Powder Puff</p>
-                    <a href="#" class="btn btn-dark mt-4">Add Cart</a>
+                    <button class="btn btn-dark mt-4" onclick="addcart()">Add Cart</button>
                 </div>
             </div>
         </div>
@@ -113,6 +132,7 @@
 
     </div>
 
+    <script src="/js/function.js"></script>
     <script src="/js/bootstrap.min.js"></script>
 </body>
 </html>
